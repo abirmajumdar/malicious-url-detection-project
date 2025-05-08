@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import BASE_URL from "../config/Base";
 
 export default function DashboardPage() {
   const [search, setSearch] = useState("");
@@ -14,7 +15,7 @@ export default function DashboardPage() {
     // Fetch all user searches from backend
     const fetchSearches = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/url/getallurlresult"); // Update if your route differs
+        const response = await axios.get(`${BASE_URL}/url/getallurlresult`); // Update if your route differs
         setResults(response.data);
       } catch (error) {
         console.error("Failed to fetch search results", error);
