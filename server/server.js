@@ -31,3 +31,6 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
 
 app.use('/auth',authRoute)
 app.use('/url',showurlRoute)
+app.use('/corn',(req,res)=>{
+    console.log("i'm awake from server")
+})
